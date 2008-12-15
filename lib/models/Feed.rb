@@ -1,4 +1,6 @@
-class DBFeed < Sequel::Model(DB[:feeds])
+class Feed < ActiveRecord::Base
 	has_many :posts
+
+	validates_presence_of :link, :feed_url
 
 end

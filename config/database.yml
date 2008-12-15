@@ -1,0 +1,3 @@
+adapter: mysql
+database: rfeed_test_ar
+username: root

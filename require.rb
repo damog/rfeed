@@ -4,7 +4,8 @@
 
 [
 	"rubygems",
-	"sequel"
+	"activerecord",
+	"yaml",
 ].each do |r|
 	require "#{r}"
 end

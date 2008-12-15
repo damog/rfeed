@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 
-require "rfeed"
+require "../rfeed"
 
+opts = Trollop::options do
+	version "rfeed #{Rfeed.version}"
+	banner <<-EOS
+Totally awesome feed engine.
+
+Usage:
+	rf [ options ]
+
+where [ options ] are:
+EOS
+
+	opt :add, "Add a new feed instance"
+	opt :del, "Remove a given feed instance"
+end
 

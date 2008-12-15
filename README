@@ -1,6 +1,6 @@
 rFeed is an awesome and real world-class feeds processor.
 
-It uses rFeedParser for its parsing basic needs and Sequel for DB abstraction.
+It uses rFeedParser for its parsing basic needs and ActiveRecord for DB abstraction.
 
 It's being made by the people at Axiombox (http://axiombox.com). Take a look at
 the AUTHORS file for details. Also COPYING. And also WHY.

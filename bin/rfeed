@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# this will require rfeed.rb in a clever way
+require "#{File.dirname(__FILE__)}/../lib/rfeed.rb"
+require "pp"
+
+SUB_COMMANDS = %w/feed post add new/
+
+raise ArgumentError, "Sin comando" unless ARGV[0]
+
+cmd = ARGV.shift
+case cmd
+	when "post"
+	when "add"
+	when "new"
+		raise ArgumentError, "No feed specified" unless ARGV[0]
+		f =	Feed.new :feed => ARGV[0]
+		pp f
+	else
+		raise ArgumentError, "No comand found for `#{cmd}'"
+end
+
+

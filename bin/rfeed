@@ -10,12 +10,28 @@ raise ArgumentError, "Sin comando" unless ARGV[0]
 
 cmd = ARGV.shift
 case cmd
+	when "update"
+		fs = Feed.find :all
+		fs.each do |f|
+			f.update
+		end
+
 	when "post"
 	when "add"
 	when "new"
 		raise ArgumentError, "No feed specified" unless ARGV[0]
 		f =	Feed.new :feed => ARGV[0]
-		pp f
+		if f.save
+			puts "Successfully subscribed: #{f.id}:#{f.feed_url}"
+		else
+			unless f.errors.full_messages.empty?
+				$stderr.puts "ERROR:"
+				f.errors.full_messages.each do |e|
+					$stderr.puts " #{e}"
+				end
+			end
+		end
+
 	else
 		raise ArgumentError, "No comand found for `#{cmd}'"
 end

@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration
 			p.text :description
 			p.timestamp :date
 			p.timestamp :updated_at
-			p.timestamp :last_processed_at
+			p.timestamp :created_at
 		end
 	end
 

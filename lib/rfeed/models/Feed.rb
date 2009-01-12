@@ -1,6 +1,7 @@
 require "rfeedparser"
 require "feedbag"
 require "goodies/goodies/lwr-simple"
+require 'digest/md5'
 
 class Feed < ActiveRecord::Base
 	has_many :posts
@@ -9,9 +10,13 @@ class Feed < ActiveRecord::Base
 	validates_presence_of :link, :message => "wasn't found on `feed_url'"
 	validates_uniqueness_of :feed_url, :message => "already exists on database"
 
-	attr_accessor :fp
+	attr_accessor :fp, :changed
 
-	def parse(url)
+	def name
+		return "#{self.id}:#{self.feed_url}"
+	end
+
+	def parse(url, params = {})
     url = LWR::Simple.normalize(url).to_s
 
     # checking that the url is a feed:
@@ -26,12 +31,17 @@ class Feed < ActiveRecord::Base
       $stderr.puts "URL provided not a feed but using `#{url}'"
     end
 
-		fp = FeedParser.parse url
+		fp = FeedParser.parse url, { :etag => params[:etag], :modified => params[:modified] }
 
 		if fp.status.nil? or fp.status >= 400.to_s
       $stderr.puts "Errors with #{url}!"
       return nil
     end
+
+		if fp.status == "304" and fp.feed.empty? and fp.entries.empty? # not changed!
+			self.changed = false
+			return self
+		end
 
     # there's no real easy way to do this
     # so we'll only do if the feed_validator gem is available
@@ -56,22 +66,44 @@ class Feed < ActiveRecord::Base
 		
 		self.link = fp.feed.link
 		self.title = fp.feed.title
-		self.etag = fp.etag
-		self.last_modified = fp.modified_time
+		if params[:new]
+			self.etag = nil
+			self.last_modified = nil
+		else
+			puts "ahh!"
+			self.etag = fp.etag
+			self.last_modified = fp.modified_time
+		end
 		self.feed_url = url
+		self.changed = true
 		self.fp = fp
+		self
 	end
 
-	def update
-		p = self.parse(self.feed_url)
+	def fetch
+		parse(self.feed_url, :etag => self.etag, :modified => self.last_modified)
 
-		p.entries.each do |e|
-#			Post.new  !!!!
+		unless self.changed
+			puts "#{self.name}: Feed unchanged"
+			return
+		end
+
+		self.fp.entries.each do |e|
+			post = Post.entry(e, self)
+		end
+
+		self.save
+
+		if feed.save
+			puts "#{feed.name} successfully fetched!"
+		else
+			puts feed.errors.full_messages
+			pp feed
 		end
 	end
 
 	def feed=(url)
-		p = self.parse(url)
+		p = self.parse(url, :new => true)
 
 		if p.nil?
 			return nil

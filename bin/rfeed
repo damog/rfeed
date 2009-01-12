@@ -10,14 +10,18 @@ raise ArgumentError, "Sin comando" unless ARGV[0]
 
 cmd = ARGV.shift
 case cmd
-	when "update"
-		fs = Feed.find :all
-		fs.each do |f|
-			f.update
+	when "fetch"
+		if ARGV[0]
+			fs = Feed.find ARGV[0]
+			fs.fetch
+		else
+			fs = Feed.find :all
+			fs.each do |f|
+				f.fetch
+			end
 		end
 
 	when "post"
-	when "add"
 	when "new"
 		raise ArgumentError, "No feed specified" unless ARGV[0]
 		f =	Feed.new :feed => ARGV[0]
@@ -31,6 +35,30 @@ case cmd
 				end
 			end
 		end
+
+	when /(del|delete|remove)/i
+		raise ArgumentError, "No feed id specified to remove" unless ARGV[0]
+		f = Feed.find ARGV[0]
+		if f.destroy
+			puts "#{f.name} successfully deleted."
+		else
+			$stderr.puts "ERROR:"
+			f.errors.full_messages.each do |e|
+				$stderr.puts " #{e}"
+			end
+		end
+
+
+	when "list"
+		fs = Feed.find :all
+		fs.each do |f|
+			puts "#{ f.id}:#{f.feed_url}"
+			pp f
+		end
+	
+	when /^\d+$/
+		f = Feed.find cmd
+		pp f
 
 	else
 		raise ArgumentError, "No comand found for `#{cmd}'"

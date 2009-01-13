@@ -3,6 +3,14 @@ require "feedbag"
 require "goodies/goodies/lwr-simple"
 require 'digest/md5'
 
+class FeedParserRFeed < FeedParser
+	def initialize
+	end
+
+	def parse
+	end
+end
+
 class Feed < ActiveRecord::Base
 	has_many :posts
 

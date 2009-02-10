@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	validates_presence_of :entry_id, :feed_id, :title, :link
 
 	validates_uniqueness_of :entry_id
-
+		
 	def self.entry(e, feed = nil)
 		entry_id = nil
 		if not e["id"].empty? # e.id will try to trigger Object.id

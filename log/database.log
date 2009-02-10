@@ -54,3 +54,30 @@ Migrating to CreateFeeds (1)
 Migrating to CreatePosts (2)
   [4;36;1mSQL (20.4ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `entry_id` varchar(255), `feed_id` int(11), `title` varchar(255), `link` varchar(255), `description` text, `date` datetime, `updated_at` datetime, `created_at` datetime) ENGINE=InnoDB[0m
   [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (1)
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE `feeds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `link` varchar(255), `feed_url` varchar(255), `title` varchar(255), `etag` varchar(255), `last_modified` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('1')[0m
+Migrating to CreatePosts (2)
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `entry_id` varchar(255), `feed_id` int(11), `title` varchar(255), `link` varchar(255), `description` text, `date` datetime, `updated_at` datetime, `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('2')[0m
+  [4;36;1mSQL (23.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (17.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (19.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (1)
+Migrating to CreatePosts (2)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (1)
+Migrating to CreatePosts (2)
+  [4;36;1mSQL (39.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFeeds (1)
+Migrating to CreatePosts (2)

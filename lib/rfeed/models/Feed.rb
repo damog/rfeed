@@ -14,6 +14,19 @@ class Feed < ActiveRecord::Base
 	
 	before_validation_on_create :before_created
 	before_validation_on_update :before_updated
+	before_destroy :before_destroyed
+	
+	def name
+		return "#{self.id}:#{self.feed_url}"
+	end
+	
+	protected
+	
+	def before_destroyed
+	  self.posts.each do |p|
+	    p.destroy
+	  end
+	end
 	
 	def before_created
     self.url = LWR::Simple.normalize(self.url).to_s
@@ -67,14 +80,21 @@ class Feed < ActiveRecord::Base
     self.title = fp.feed.title
     true # if i made it this far, it was successful callback  
 	end
-	
-
-	def name
-		return "#{self.id}:#{self.feed_url}"
-	end
 
 	def before_updated
-	  self.fp = FeedParser.parse self.feed_url, { :etag => self.etag, :modified => self.last_modified }
+	  if self.etag and self.last_modified
+	    puts "Both etag and last_modified"
+	    self.fp = FeedParser.parse self.feed_url, { :etag => self.etag, :modified => self.last_modified }
+	  elsif self.etag
+	    puts "Only etag"
+	    self.fp = FeedParser.parse self.feed_url, { :etag => self.etag }
+	  elsif self.last_modified
+	    puts "Only last_modified"
+	    self.fp = FeedParser.parse self.feed_url, { :modified => self.last_modified }
+	  else
+	    puts "Neither etag or last_modified"
+	    self.fp = FeedParser.parse self.feed_url
+	  end
 	
 		if self.fp.status.nil? or self.fp.status >= 400.to_s
       $stderr.puts "Errors with #{self.feed_url}!"
@@ -87,7 +107,7 @@ class Feed < ActiveRecord::Base
 		end
     
 		self.link = self.fp.feed.link
-		self.title = self.fp.feed.title
+		self.title = self.fp.feed.title unless self.title
 		self.etag = self.fp.etag
 		self.last_modified = self.fp.modified_time
 		
@@ -95,33 +115,44 @@ class Feed < ActiveRecord::Base
 		# self.feed_url =
 		
 		self.fp.entries.each do |e|
-		  post = Post.new :e => e
+		  post = Post.entry(e, self)
+		  if post
+		    if post.save
+		      puts "Successfully created #{post.entry_id}"
+		    end
+		  end
+      # post = Post.new :e => e
+      # if post.save
+      #   puts "Successfully saved #{post.entry_id}"
+      # else
+      #   puts "Error with #{pp e}"
+      # end
 		end
 		
 		true 
 	end
 
-	def fetch
-		parse(self.feed_url, :etag => self.etag, :modified => self.last_modified)
-
-	  # unless self.changed
-	 #     puts "#{self.name}: Feed unchanged"
-	 #     return
-	 #   end
-
-		self.fp.entries.each do |e|
-			post = Post.entry(e, self)
-		end
-
-		self.save
-
-		if feed.save
-			puts "#{feed.name} successfully fetched!"
-		else
-			puts feed.errors.full_messages
-			pp feed
-		end
-	end
+  # def fetch
+  #   parse(self.feed_url, :etag => self.etag, :modified => self.last_modified)
+  # 
+  #   # unless self.changed
+  #  #     puts "#{self.name}: Feed unchanged"
+  #  #     return
+  #  #   end
+  # 
+  #   self.fp.entries.each do |e|
+  #     post = Post.entry(e, self)
+  #   end
+  # 
+  #   self.save
+  # 
+  #   if feed.save
+  #     puts "#{feed.name} successfully fetched!"
+  #   else
+  #     puts feed.errors.full_messages
+  #     pp feed
+  #   end
+  # end
 
 
 end

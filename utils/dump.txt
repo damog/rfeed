@@ -1,0 +1,870 @@
+/opt/local/lib/ruby/1.8/rexml/Document.rb:25: warning: already initialized constant DECLARATION
+http://www.nydailynews.com/lifestyle/food/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/blogspot/MKuf:
+ errors:
+Feed url already exists on database
+
+http://diveintomark.org/feed:
+ errors:
+Feed url already exists on database
+
+http://canijalagartija.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://miapogeo.com/main/component/option,com_rd_rss/id,28/:
+ errors:
+Feed url already exists on database
+
+http://jordi.net/blog/feed:
+URL not a feed and not feeds found
+ errors:
+
+http://epeus.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://brmb.blogspot.com/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://nylife.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://www.debian-administration.org/articles.rdf:
+ errors:
+Feed url already exists on database
+
+http://www.impre.com/servicios/rss/eldiariony.xml:
+ errors:
+Feed url already exists on database
+
+http://jobs.37signals.com/categories/2/jobs.rss:
+ errors:
+Feed url already exists on database
+
+http://www.boston.com/bigpicture/index.xml:
+ errors:
+Feed url already exists on database
+
+http://szeryf.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://laninfavouyerista.blogspot.com/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/dixo-sopitas:
+ errors:
+Feed url already exists on database
+
+http://blogs.sun.com/alanbur/feed/entries/rss?cat=%2FPerl:
+URL provided not a feed but using `http://blogs.sun.com/alanbur/feed/entries/rss'
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Tech.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://feeds.feedburner.com/boxbyte:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/Entredos:
+ success!
+http://jobs.perl.org/rss/telecommute.rss:
+ errors:
+Feed url already exists on database
+
+http://burodedescredito.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://torvalds-family.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/NYCResistor:
+ errors:
+Feed url already exists on database
+
+http://www.ricardocucamonga.com/blog/?feed=rss2:
+Error ocurred with `http://www.ricardocucamonga.com/blog/': 500 Internal Server Error
+URL not a feed and not feeds found
+ errors:
+
+http://feeds.feedburner.com/Nacotheque:
+ errors:
+Feed url already exists on database
+
+http://kamylaa-diario.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds2.feedburner.com/LitanyAgainstFear:
+ errors:
+Feed url already exists on database
+
+http://planet.debian.org/rss20.xml:
+ errors:
+Feed url already exists on database
+
+http://blogs.discovery.com/nerdabout_new_york/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/PlanetPerl:
+ errors:
+Feed url already exists on database
+
+http://www.makenyc.org/?feed=rss2:
+URL provided not a feed but using `http://www.makenyc.org/?feed=rss2'
+ errors:
+Feed url already exists on database
+
+http://www.oreillynet.com/pub/feed/16:
+ errors:
+Feed url already exists on database
+
+http://xkcd.com/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds2.feedburner.com/SocialWebBlog:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Travel.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://goolfrano.blogspot.com/feeds/posts/default:
+Error ocurred with `http://goolfrano.blogspot.com/feeds/posts/default': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://orion.dgsca.unam.mx/~rss/info.xml:
+Errno::ECONNREFUSED error ocurred with: `http://orion.dgsca.unam.mx/~rss/info.xml': Connection refused - connect(2)
+URL not a feed and not feeds found
+ errors:
+
+http://www.bomberazo.com.mx/feed/:
+ errors:
+Feed url already exists on database
+
+http://blog.wada.com.mx/data/xml/blog.rss:
+URL not a feed and not feeds found
+ errors:
+
+http://blog.rabade.net/data/xml/blog.atom:
+Error ocurred with `http://blog.rabade.net/data/xml/blog.atom': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://www.nytimes.com/services/xml/rss/nyt/World.xml:
+ errors:
+Feed url already exists on database
+
+http://resiak.livejournal.com/data/rss:
+ errors:
+Feed url already exists on database
+
+http://www.soydeudor.com/?feed=atom:
+URL provided not a feed but using `http://www.soydeudor.com/?feed=rss2'
+ errors:
+Feed url already exists on database
+
+http://ferso.net/feed/:
+ errors:
+Feed url already exists on database
+
+http://vivirmexico.com/feed/:
+Error ocurred with `http://vivirmexico.com/feed/': 500 Internal Server Error
+URL not a feed and not feeds found
+ errors:
+
+http://blog.planetalinux.org/blog/feed:
+ errors:
+Feed url already exists on database
+
+http://www.kibberocksthecity.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://amyluinluv.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.nyoug.org/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://bisexualaventuras.spaces.live.com/feed.rss:
+Error ocurred with `http://bisexualaventuras.spaces.live.com/feed.rss': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://ramoncarazo.net/data/xml/blog.atom:
+URL not a feed and not feeds found
+ errors:
+
+http://jobs.perl.com/a/jbb/find-jobs-rss?sb=1&sbo=1:
+URL provided not a feed but using `http://jobs.perl.com/a/jbb/find-jobs-rss'
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/SkypeForLinux:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/The_Imperial_City.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://blog.timbunce.org/feed/:
+ errors:
+Feed url already exists on database
+
+http://gigya-inc.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.candelariomex.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://stuffwhitepeoplelike.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://www.nydailynews.com/lifestyle/travel/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/MoccablogCafe/:
+ errors:
+Feed url already exists on database
+
+http://blag.xkcd.com/feed/:
+URL not a feed and not feeds found
+ errors:
+
+http://feeds.feedburner.com/tangible:
+ errors:
+Feed url already exists on database
+
+http://feeds.hipertextual.com/monkeyzen:
+ errors:
+Feed url already exists on database
+
+http://www.blog.danielacapistrano.com/?feed=rss2:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/listocomics:
+ errors:
+Feed url already exists on database
+
+http://feeds2.feedburner.com/SmashingApps:
+ errors:
+Feed url already exists on database
+
+http://hackervisions.org/?feed=rss2:
+URL provided not a feed but using `http://hackervisions.org/?feed=rss2'
+ errors:
+Feed url already exists on database
+
+http://search.twitter.com/search.atom?q=nacotheque:
+URL provided not a feed but using `http://search.twitter.com/search.atom'
+Not using feed_validator
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/Mexside:
+ errors:
+Feed url already exists on database
+
+http://ve.planetalinux.org/rss20.xml:
+ errors:
+Feed url already exists on database
+
+http://todotxt.com/feed.xml:
+ errors:
+Feed url already exists on database
+
+http://andreslajous.blogs.com/alternativa_joven/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://m5status.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/dixo-radio-canibal:
+ errors:
+Feed url already exists on database
+
+http://cristinamorono.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Media.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://nymag.com/rss/Best_Bets_Daily.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://blogs.activestate.com/shanec/atom.xml:
+ errors:
+Feed url already exists on database
+
+https://sedo.com/rss/rss_list.php?rss_id=1&partnerid_rss=35425&tracked=&partnerid=&language=us:
+OpenSSL::SSL::SSLError error ocurred with: `https://sedo.com/rss/rss_list.php': SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+URL not a feed and not feeds found
+ errors:
+
+http://www.damog.net/feed/:
+ errors:
+Feed url already exists on database
+
+http://josuecandia.com/?feed=rss2:
+ errors:
+Feed url already exists on database
+
+http://extralongfingers.com/wordpress/?feed=rss2:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/UseStrict:
+ errors:
+Feed url already exists on database
+
+http://us.apachecon.com/c/acus2008/export/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://blog.bureado.com.ve/?feed=rss2:
+ errors:
+Feed url already exists on database
+
+http://mail-archives.apache.org/mod_mbox/www-announce/?format=atom:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Food.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://feeds.nydailynews.com/nydnrss/lifestyle:
+ errors:
+Feed url already exists on database
+
+http://perladvent.pm.org/RSS.xml:
+ errors:
+Feed url already exists on database
+
+http://www.jefedejefes.com/blog/?feed=rss2:
+Error ocurred with `http://www.jefedejefes.com/blog/': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://redhanded.hobix.com/index.xml:
+ errors:
+Feed url already exists on database
+
+http://www.pinchechamaquitopendejo.com/feed/:
+Error ocurred with `http://www.pinchechamaquitopendejo.com/feed/': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://blog.37pixels.net/feed/:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/AbeEstrada:
+ errors:
+Feed url already exists on database
+
+http://www.cafedealtura.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/buckblog:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/TheRssBlog:
+ errors:
+Feed url already exists on database
+
+http://www.phdcomics.com/gradfeed.php:
+ errors:
+Feed url already exists on database
+
+http://chesslessons.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://www.modernperlbooks.com/mt/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://domesticandsingle.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://justatheory.com/index.atom:
+ errors:
+Feed url already exists on database
+
+http://www.mikebonales.com/home/?feed=atom:
+URL provided not a feed but using `http://www.mikebonales.com/home/?feed=rss2'
+ errors:
+Feed url already exists on database
+
+http://www.nuevayorkguide.com/nueva_york/atom.xml:
+URL not a feed and not feeds found
+ errors:
+
+http://nymag.com/rss/Nightlife.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://blog.carrion.ws/feed/:
+ errors:
+Feed url already exists on database
+
+http://miapogeo.com/main/component/option,com_rd_rss/id,18/:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/The_City_Politic.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://conferences.mongueurs.net/yn2008/atom/en.xml:
+ errors:
+Feed url already exists on database
+
+http://samienpani.blogspot.com/atom.xml:
+Error ocurred with `http://samienpani.blogspot.com/atom.xml': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://personaldisorders.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://desdeunplanetalejano.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://feedproxy.google.com/~u/12939027450502089257:
+ errors:
+Feed url already exists on database
+
+http://www.cofradia.org/backend.php:
+Error ocurred with `http://www.cofradia.org/backend.php': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://feeds.nydailynews.com/nydnrss/latino:
+ errors:
+Feed url already exists on database
+
+http://jobs.perl.org/rss/by_country.rss?country=Mexico:
+URL provided not a feed but using `http://jobs.perl.org/rss/by_country.rss'
+Not using feed_validator
+ errors:
+Feed url already exists on database
+
+http://www.perlcast.com/rss/current.xml:
+ errors:
+Feed url already exists on database
+
+http://too.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/orbitz-travel-blog:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/dixo-warpig:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/b3co:
+ errors:
+Feed url already exists on database
+
+http://bestpractical.typepad.com/worst_impractical/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/FotosDeNuevaYork:
+ errors:
+Feed url already exists on database
+
+http://www.roth.net/blog/index.php/feed/atom/:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/daily/entertainment/index.xml:
+ success!
+http://feeds.feedburner.com/HistoriasDeNuevaYork:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Intelligencer.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://failblog.org/feed:
+ success!
+http://feeds2.feedburner.com/git-ready:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Fashion_and_Shopping.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://www.ahivamos.net/blog/feed/:
+ errors:
+Feed url already exists on database
+
+http://patriciamercado.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://sherekan.com.ar/feed/:
+Error ocurred with `http://sherekan.com.ar/feed/': 400 Bad Request
+URL not a feed and not feeds found
+ errors:
+
+http://blog.last.fm/atom/?section=blog:
+URL provided not a feed but using `http://blog.last.fm/atom/'
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/github:
+ errors:
+Feed url already exists on database
+
+http://api.flickr.com/services/feeds/photos_public.gne?id=21463533@N06&lang=en-us&format=atom:
+URL provided not a feed but using `http://api.flickr.com/services/feeds/photos_public.gne'
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/thenextweb:
+ success!
+http://www.odie27.com.mx/blog/?feed=atom:
+URL not a feed and not feeds found
+ errors:
+
+http://primates.ximian.com/~federico/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://lifehacker.com/tag/top/index.xml:
+URL not a feed and not feeds found
+ errors:
+
+http://monerohernandez.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://anaisabel.net.ve/feed/:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/eldiadelcalenton:
+ errors:
+Feed url already exists on database
+
+http://todonyc.info/?feed=rss2:
+ errors:
+Feed url already exists on database
+
+http://vetacreativa.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://perliux.net/feed/:
+ errors:
+Feed url already exists on database
+
+http://www.oreillynet.com/onlamp/blog/index.xml:
+ errors:
+Feed url already exists on database
+
+http://open.blogs.nytimes.com/atom.xml:
+URL not a feed and not feeds found
+ errors:
+
+http://guffo.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://twitterapps.co.uk/feed/:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/Bunsen:
+ errors:
+Feed url already exists on database
+
+http://feeds.hipertextual.com/cucharasonica:
+ errors:
+Feed url already exists on database
+
+http://www.kibberocksthecity.com/journal/atom.xml:
+Error ocurred with `http://www.kibberocksthecity.com/journal/atom.xml': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://perlenespanol.baboonsoftware.com/tutoriales/tutoriales.rss:
+URL not a feed and not feeds found
+ errors:
+
+http://pielfluidos.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.cindylaregia.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://www.gubatron.com/blog/feed/:
+ errors:
+Feed url already exists on database
+
+http://firstlook.blogs.nytimes.com/feed/:
+URL not a feed and not feeds found
+ errors:
+
+http://diveintoperl6.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/rakudo-dot-org:
+ errors:
+Feed url already exists on database
+
+http://rockandroll.com.mx/podcasts/olallofeed.xml:
+ errors:
+Feed url already exists on database
+
+http://educacionvirtualyadistancia.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/RubyInside:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/MetrobloggingNycAtom:
+ errors:
+Feed url already exists on database
+
+http://maggit.com.mx/?feed=atom:
+URL provided not a feed but using `http://maggit.com.mx/?feed=rss2'
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/errtheblog:
+ errors:
+Feed url already exists on database
+
+http://ashtear.org/feed/:
+Error ocurred with `http://ashtear.org/feed/': 500 Internal Server Error
+URL not a feed and not feeds found
+ errors:
+
+http://petdance.com/blog/atom.xml:
+URL provided not a feed but using `http://theworkinggeek.com/atom.xml'
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/SouthPoleStrip:
+URL not a feed and not feeds found
+ errors:
+
+http://nymag.com/rss/The_Power_Grid.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://blog.stone-head.org/feed/atom/:
+ errors:
+Feed url already exists on database
+
+http://beardy.ath.cx/feed/:
+ errors:
+Feed url already exists on database
+
+http://e-de.com.mx/blog/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://www.fcestrada.com/feed/:
+Error ocurred with `http://www.fcestrada.com/feed/': 404 Not Found
+URL not a feed and not feeds found
+ errors:
+
+http://www.dedosen2.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.kitebird.com/rss/updates.rss:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/The_Bottom_Line.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://feeds.feedburner.com/ILove20:
+ errors:
+Feed url already exists on database
+
+http://www.dont-be-a-twit.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://mx.planetalinux.org/rss20.xml:
+ errors:
+Feed url already exists on database
+
+http://www.wavespotnsn.com/podcasts/feed:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/LoudThinking:
+ errors:
+Feed url already exists on database
+
+http://paco88mph.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.mickm.com/rss/tutorials:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/nubyonrails:
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Real_Estate.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://feeds.feedburner.com/PerlBuzz:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/ozmmorg:
+ errors:
+Feed url already exists on database
+
+http://feeds2.feedburner.com/igvita:
+ errors:
+Feed url already exists on database
+
+http://cityroom.blogs.nytimes.com/feed/:
+URL not a feed and not feeds found
+ errors:
+
+http://blog.juwestudio.com/atom/?section=article:
+URL provided not a feed but using `http://blog.juwestudio.com/atom/'
+ errors:
+Feed url already exists on database
+
+http://nymag.com/rss/Sex_and_Relationships.xml:
+Not using feed_validator
+ errors:
+Link wasn't found on `feed_url'
+
+http://mariaverd.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/SkypeGarage:
+ errors:
+Feed url already exists on database
+
+http://www.nytimes.com/services/xml/rss/nyt/Technology.xml:
+ errors:
+Feed url already exists on database
+
+http://foro.fciencias.unam.mx/?feed=rss2:
+Errno::ETIMEDOUT error ocurred with: `http://foro.fciencias.unam.mx/': Operation timed out - connect(2)
+URL not a feed and not feeds found
+ errors:
+
+http://www.gulev.org.mx/eventos/rss.xml:
+ errors:
+Feed url already exists on database
+
+http://www.apachenews.org/atom.xml:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/curbed/BHBe:
+ errors:
+Feed url already exists on database
+
+http://developer.myspace.com/Community/blogs/MainFeed.aspx:
+ errors:
+Feed url already exists on database
+
+http://feeds.feedburner.com/Gitcasts:
+ errors:
+Feed url already exists on database
+
+http://chainsawblues.vox.com/library/posts/atom-full.xml:
+ errors:
+Feed url already exists on database
+
+http://lagranmanzana.wordpress.com/feed/:
+ errors:
+Feed url already exists on database
+
+http://feeds2.feedburner.com/RosauraOchoaBlog:
+ errors:
+Feed url already exists on database
+
+http://feeds.nydailynews.com/nydnrss/opinions:
+ errors:
+Feed url already exists on database
+
+http://lesmotsetleschoses2.blogspot.com/feeds/posts/default:
+ errors:
+Feed url already exists on database
+
+http://www.paseusted.org/forum/topic/list?feed=yes&xn_auth=no:
+URL provided not a feed but using `http://www.paseusted.org/forum/topic/list?feed=yes&xn_auth=no'
+ errors:
+Link wasn't found on `feed_url'

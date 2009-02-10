@@ -8,8 +8,45 @@ SUB_COMMANDS = %w/feed post add new/
 
 raise ArgumentError, "Sin comando" unless ARGV[0]
 
+# parse_opml (opml_node, parent_names=[])
+#
+# takes an REXML::Element that has OPML outline nodes as children, 
+# parses its subtree recursively and returns a hash:
+# { feed_url => [parent_name_1, parent_name_2, ...] } 
+#
+def parse_opml(opml_node, parent_names=[])
+  feeds = {}
+  opml_node.elements.each('outline') do |el|
+    if (el.elements.size != 0) 
+      feeds.merge!(parse_opml(el, parent_names + [el.attributes['text']]))
+    end
+    if (el.attributes['xmlUrl'])
+      feeds[el.attributes['xmlUrl']] = parent_names
+    end
+  end
+  return feeds
+end
+
+
 cmd = ARGV.shift
 case cmd
+  when "opml"
+    require 'rexml/Document'
+
+    opml = REXML::Document.new(File.read(ARGV[0]))
+    feeds = parse_opml(opml.elements['opml/body'])
+    feeds.keys.each do |f|
+      puts "#{f}:"
+      feed = Feed.new :url => f
+      if feed.save
+        puts " success!"
+      else
+        puts " errors:"
+        puts feed.errors.full_messages
+        puts
+      end
+    end
+     
 	when "update"
 		if ARGV[0]
 			fs = Feed.find ARGV[0]

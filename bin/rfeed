@@ -10,21 +10,21 @@ raise ArgumentError, "Sin comando" unless ARGV[0]
 
 cmd = ARGV.shift
 case cmd
-	when "fetch"
+	when "update"
 		if ARGV[0]
 			fs = Feed.find ARGV[0]
-			fs.fetch
+			fs.save
 		else
 			fs = Feed.find :all
 			fs.each do |f|
-				f.fetch
+				f.save
 			end
 		end
 
 	when "post"
 	when "new"
 		raise ArgumentError, "No feed specified" unless ARGV[0]
-		f =	Feed.new :feed => ARGV[0]
+		f =	Feed.new :url => ARGV[0]
 		if f.save
 			puts "Successfully subscribed: #{f.id}:#{f.feed_url}"
 		else

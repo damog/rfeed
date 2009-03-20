@@ -1,7 +1,10 @@
 require "rfeedparser"
 require "feedbag"
+require "terminator"
 require "goodies/goodies/lwr-simple"
 require 'digest/md5'
+
+Hpricot.buffer_size = 262144
 
 class Feed < ActiveRecord::Base
 	has_many :posts
@@ -29,14 +32,28 @@ class Feed < ActiveRecord::Base
 	end
 	
 	def before_created
-    self.url = LWR::Simple.normalize(self.url).to_s
+	  unless self.url
+	    self.errors.add :feed_url, "was not specified"
+	    return false
+	  end
+	  
+	  # there's very few cases where the normalized url could be
+	  # fucked up, this is not exactly a bug on LWR
+	  begin
+      self.url = LWR::Simple.normalize(self.url).to_s
+    rescue => ex
+      $stderr.puts "Unrecoverable error with `#{self.url}' on #{ex.class}:"
+      $stderr.puts " #{ex.message}"
+      self.errors.add :feed_url, "was fucked up"
+      return false
+    end
 
     # checking that the url is a feed:
     feedbag = Feedbag.find(url)
     if feedbag.size == 1 and feedbag.first == url
       # si es
     elsif feedbag.first.nil?
-      $stderr.puts "URL not a feed and not feeds found"
+      self.errors.add :feed_url, "not a feed and not feeds found"
       return false
     else
       self.url = feedbag.first
@@ -44,14 +61,27 @@ class Feed < ActiveRecord::Base
     end
 
     self.feed_url = self.url
-		fp = FeedParser.parse self.url
+
+    fp = nil
+    begin
+      Terminator.terminate 20 do
+        fp = FeedParser.parse self.url
+      end
+    rescue Terminator::Error => ex
+      self.errors.add :feed_url, "- #{ex.class} error ocurred: #{ex.message}"
+      return false
+    rescue
+      self.errors.add :feed_url, "- Internal malfunction, mail developers"
+      return false
+    end
 
 		if fp.status.nil? or fp.status >= 400.to_s
-      $stderr.puts "Errors with #{url}!"
+		  self.errors.add :feed_url, "couldn't be fetched or returned HTTP bad code"
       return false
     end
 
 		if fp.status == "304" and fp.feed.empty? and fp.entries.empty? # not changed!
+		  self.errors.add :feed_url, "unchanged or empty"
 			return false
 		end
 
@@ -70,43 +100,55 @@ class Feed < ActiveRecord::Base
         v = W3C::FeedValidator.new
         v.validate_url self.url
         unless v.valid?
-          $stderr.puts "Invalid feed"
+          self.errors.add :feed_url, "didn't look like a feed and didn't pass the w3c validation"
           return false
         end
       end
     end
     
-    self.link = fp.feed.link
+    self.link = fp.feed.link || self.feed_url
     self.title = fp.feed.title
     true # if i made it this far, it was successful callback  
 	end
 
 	def before_updated
-	  if self.etag and self.last_modified
-	    puts "Both etag and last_modified"
-	    self.fp = FeedParser.parse self.feed_url, { :etag => self.etag, :modified => self.last_modified }
-	  elsif self.etag
-	    puts "Only etag"
-	    self.fp = FeedParser.parse self.feed_url, { :etag => self.etag }
-	  elsif self.last_modified
-	    puts "Only last_modified"
-	    self.fp = FeedParser.parse self.feed_url, { :modified => self.last_modified }
-	  else
-	    puts "Neither etag or last_modified"
-	    self.fp = FeedParser.parse self.feed_url
-	  end
+    $stdout.puts "=> #{self.feed_url}"
+    begin
+      Terminator.terminate 20 do
+        if self.etag and self.last_modified
+          puts "Both etag and last_modified"
+          self.fp = FeedParser.parse self.feed_url, { :etag => self.etag, :modified => self.last_modified }
+        elsif self.etag
+          puts "Only etag"
+          self.fp = FeedParser.parse self.feed_url, { :etag => self.etag }
+        elsif self.last_modified
+          puts "Only last_modified"
+          self.fp = FeedParser.parse self.feed_url, { :modified => self.last_modified }
+        else
+          puts "Neither etag or last_modified"
+          self.fp = FeedParser.parse self.feed_url
+        end
+      end
+    rescue Terminator::Error => ex
+      self.errors.add :feed_url, "- #{ex.class} error ocurred: #{ex.message}"
+      return false
+    rescue
+      self.errors.add :feed_url, "- Internal malfunction"
+      return false
+    end
+
 	
 		if self.fp.status.nil? or self.fp.status >= 400.to_s
-      $stderr.puts "Errors with #{self.feed_url}!"
+		  self.errors.add :feed_url, "couldn't be fetched or returned HTTP bad code"
       return false
     end
 
 		if self.fp.status == "304" and self.fp.feed.empty? and self.fp.entries.empty? # not changed!
-		  $stderr.puts "Feed unchanged (not updating)!"
+		  self.errors.add :feed_url, "unchanged or empty"
 			return false
 		end
     
-		self.link = self.fp.feed.link
+		self.link = self.fp.feed.link || self.feed_url 
 		self.title = self.fp.feed.title unless self.title
 		self.etag = self.fp.etag
 		self.last_modified = self.fp.modified_time
@@ -131,28 +173,6 @@ class Feed < ActiveRecord::Base
 		
 		true 
 	end
-
-  # def fetch
-  #   parse(self.feed_url, :etag => self.etag, :modified => self.last_modified)
-  # 
-  #   # unless self.changed
-  #  #     puts "#{self.name}: Feed unchanged"
-  #  #     return
-  #  #   end
-  # 
-  #   self.fp.entries.each do |e|
-  #     post = Post.entry(e, self)
-  #   end
-  # 
-  #   self.save
-  # 
-  #   if feed.save
-  #     puts "#{feed.name} successfully fetched!"
-  #   else
-  #     puts feed.errors.full_messages
-  #     pp feed
-  #   end
-  # end
 
 
 end

@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 		
 	def self.entry(e, feed = nil)
 		entry_id = nil
-		if not e["id"].empty? # e.id will try to trigger Object.id
+		if not e["id"].nil? and not e["id"].empty? # e.id will try to trigger Object.id
 			puts "using id"
 			entry_id = e["id"]
 		elsif not e.link.empty?
@@ -25,7 +25,13 @@ class Post < ActiveRecord::Base
 
 		post = Post.find_or_create_by_entry_id(entry_id)
 		post.feed_id = feed["id"]
-		post.link = e.link || e.links[0]["href"] || feed.link || "#"
+
+    begin
+      post.link = e.link || e.links[0]["href"] || feed.link
+    rescue
+      post.link = "#"
+    end
+    
 		post.title = e.title || e.link
 		post.description = e.description || e.content || e.summary || "no content"
 		post.date = e.created_time || e.updated_time || e.published_time || feed.fp.updated_time || feed.fp.modified_time || Time.now
